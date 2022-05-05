@@ -12,7 +12,7 @@ async function getIDTokenAction() {
 getIDTokenAction()
 
 try {
-  const token = core.getIDToken
+  const token = core.getIDToken()
   // `who-to-greet` input defined in action metadata file
   const nameToGreet = core.getInput('who-to-greet');
   console.log(`Hello ${nameToGreet}!`);
