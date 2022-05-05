@@ -4,7 +4,6 @@ inputs:
   audience:  
     description: 'Audience for which the ID token is intended for'
     required: false
-inputs:
   who-to-greet:  # id of input
     description: 'Who to greet'
     required: true
