@@ -1,4 +1,4 @@
-import core from '@actions/core';
+const core = require('@actions/core');
 async function getIDTokenAction(): Promise<void> {
   
    const audience = core.getInput('audience', {required: false})
