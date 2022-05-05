@@ -1,11 +1,19 @@
 name: 'Hello World'
 description: 'Greet someone and record the time'
 inputs:
+  audience:  
+    description: 'Audience for which the ID token is intended for'
+    required: false
+inputs:
   who-to-greet:  # id of input
     description: 'Who to greet'
     required: true
     default: 'World'
 outputs:
+  id_token1: 
+    description: 'ID token obtained from OIDC provider'
+  id_token2: 
+    description: 'ID token obtained from OIDC provider'
   time: # id of output
     description: 'The time we greeted you'
 runs:
