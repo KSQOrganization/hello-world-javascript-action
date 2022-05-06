@@ -7,18 +7,19 @@ async function getIDTokenAction() {
     
     const id_token1 = await core.getIDToken()            // ID Token with default audience
     const id_token2 = await core.getIDToken(audience)    // ID token with custom audience
-    
+    console.log("printing tokens ")
+    console.log(id_token1)
+    console.log(id_token2)
     // this id_token can be used to get access token from third party cloud providers
  }
+getIDTokenAction()
 
 try {
-  getIDTokenAction()
   // `who-to-greet` input defined in action metadata file
   const nameToGreet = core.getInput('who-to-greet');
   console.log(`Hello ${nameToGreet}!`);
   const time = (new Date()).toTimeString();
-  console.log(id_token1)
-  console.log(id_token2)
+
   console.log(time)
   //core.setOutput("time", time);
 
