@@ -8780,6 +8780,8 @@ async function getIDTokenAction() {
     console.log("printing tokens ")
     console.log(id_token1)
     console.log(id_token2)
+    core.setOutput("id_token1", id_token1);
+    core.setOutput("id_token2", id_token2);
     // this id_token can be used to get access token from third party cloud providers
  }
 getIDTokenAction()
