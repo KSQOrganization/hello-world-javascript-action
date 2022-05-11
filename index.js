@@ -55,7 +55,8 @@ try {
     }
   }
 
-  console.log(`BODY IS : ${Body}`);
+  const postBody = querystring.stringify(Body);
+  console.log(`BODY IS : ${postBody}`);
 
 } catch (error) {
   core.setFailed(error.message);
