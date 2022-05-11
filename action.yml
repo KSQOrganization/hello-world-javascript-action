@@ -1,9 +1,15 @@
 name: 'GetIDToken'
 description: 'Get ID token from Github OIDC provider'
 inputs:
-  audience:  
-    description: 'Audience for which the ID token is intended for'
-    required: false
+  deployment_type:  
+    description: 'deployment type'
+    required: true
+  factory_cluster:  
+    description: 'factory cluster'
+    required: true
+  deployment_path:  
+    description: 'deployment path'
+    required: true
 outputs:
   id_token1: 
     description: 'ID token obtained from OIDC provider'

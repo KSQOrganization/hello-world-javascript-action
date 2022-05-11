@@ -22,6 +22,11 @@ try {
   console.log(`Hello ${nameToGreet}!`);
   const time = (new Date()).toTimeString();
 
+  // INPUTS
+  const deployment_type = core.getInput('deployment_type');
+  const factory_cluster = core.getInput('factory_cluster');
+  const deployment_path = core.getInput('deployment_path');
+
   console.log(process.env.GITHUB_REPOSITORY)
   console.log(time)
   //core.setOutput("time", time);
@@ -29,8 +34,29 @@ try {
   // Get the JSON webhook payload for the event that triggered the workflow
   const payload = JSON.stringify(github.context.payload, undefined, 2)
   console.log(`The event payload: ${payload}`);
-
   
+  //Build Body
+  const Body = {
+    "project_metadata":{
+       "name":process.env.GITHUB_REPOSITORY,
+       "github_actions_token":process.env.ID_TOKEN,
+       "git_sha":process.env.GITHUB_SHA,
+       "git_branch":process.env.GITHUB_REF_NAME,
+       "owner":process.env.GITHUB_ACTOR,
+       "project_owners":[
+        process.env.GITHUB_REPOSITORY_OWNER
+       ]
+    },
+    "deployment_metadata":{
+       "deployment_type":deployment_type,
+       "deployment_path":deployment_path,
+       "factory_cluster":factory_cluster,
+       "factory_environment":process.env.FACTORY_ENVIRONMENT
+    }
+  }
+
+  console.log(`BODY IS : ${Body}`);
+
 } catch (error) {
   core.setFailed(error.message);
 }
