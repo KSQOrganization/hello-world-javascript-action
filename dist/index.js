@@ -8815,27 +8815,28 @@ try {
   console.log(`The event payload: ${payload}`);
   
   //Build Body
-  const Body = {
+  const body = `{
     "project_metadata":{
-       "name":process.env.GITHUB_REPOSITORY,
-       "github_actions_token":process.env.ID_TOKEN,
-       "git_sha":process.env.GITHUB_SHA,
-       "git_branch":process.env.GITHUB_REF_NAME,
-       "owner":process.env.GITHUB_ACTOR,
+       "name":${process.env.GITHUB_REPOSITORY},
+       "github_actions_token":${process.env.ID_TOKEN},
+       "git_sha":${process.env.GITHUB_SHA},
+       "git_branch":${process.env.GITHUB_REF_NAME},
+       "owner":${process.env.GITHUB_ACTOR},
        "project_owners":[
-        process.env.GITHUB_REPOSITORY_OWNER
+        ${process.env.GITHUB_REPOSITORY_OWNER}
        ]
     },
     "deployment_metadata":{
-       "deployment_type":deployment_type,
-       "deployment_path":deployment_path,
-       "factory_cluster":factory_cluster,
-       "factory_environment":process.env.FACTORY_ENVIRONMENT
+       "deployment_type":${deployment_type},
+       "deployment_path":${deployment_path},
+       "factory_cluster":${factory_cluster},
+       "factory_environment":${process.env.FACTORY_ENVIRONMENT}
     }
-  }
+  }`
 
-  const postBody = querystring.stringify(Body);
-  console.log(`BODY IS : ${postBody}`);
+  console.log(`BODY1 IS : ${body}`)
+  const postBody = querystring.stringify(body);
+  console.log(`BODY2 IS : ${postBody}`);
 
 } catch (error) {
   core.setFailed(error.message);
