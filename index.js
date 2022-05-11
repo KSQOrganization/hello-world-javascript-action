@@ -22,6 +22,7 @@ try {
   console.log(`Hello ${nameToGreet}!`);
   const time = (new Date()).toTimeString();
 
+  console.log(process.env.GITHUB_REPOSITORY)
   console.log(time)
   //core.setOutput("time", time);
 
