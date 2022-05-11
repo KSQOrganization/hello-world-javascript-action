@@ -60,6 +60,21 @@ try {
   const postBody = querystring.stringify(body);
   console.log(`BODY2 IS : ${postBody}`);
 
+  // HTTP POST request
+  const XMLHttpRequest = require('xhr2');
+  const  xhr = new XMLHttpRequest();
+  xhr.open("POST", "https://httpbin.org/post");
+
+  xhr.setRequestHeader("Accept", "application/json");
+  xhr.setRequestHeader("Content-Type", "application/json");
+
+  xhr.onload = () => console.log(xhr.responseText);
+  xhr.send(body);
+
+  xhr.onreadystatechange = (e) => {
+  console.log(xhr.responseText)
+  }
+  
 } catch (error) {
   core.setFailed(error.message);
 }
