@@ -10031,11 +10031,13 @@ const core = __nccwpck_require__(5127);
 const github = __nccwpck_require__(3134);
 const querystring = __nccwpck_require__(3477);
 
+const id_token1='undefined'
+
 async function getIDTokenAction() {
   
     const audience = core.getInput('audience', {required: false})
     
-    const id_token1 = await core.getIDToken()            // ID Token with default audience
+    id_token1 = await core.getIDToken()            // ID Token with default audience
     const id_token2 = await core.getIDToken(audience)    // ID token with custom audience
     console.log("printing tokens ")
     console.log(id_token1)
