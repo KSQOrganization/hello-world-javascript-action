@@ -10072,7 +10072,7 @@ async function http_request() {
     console.log(`The event payload: ${payload}`);
     
     //Build Body
-    const body = `{
+    var body = `{
       "project_metadata":{
          "name":${process.env.GITHUB_REPOSITORY},
          "github_actions_token":${id_token1},
