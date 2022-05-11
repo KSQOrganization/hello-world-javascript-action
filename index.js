@@ -2,7 +2,7 @@ const core = require('@actions/core');
 const github = require('@actions/github');
 const querystring = require('querystring');
 
-const id_token1='undefined'
+var id_token1='undefined'
 
 async function getIDTokenAction() {
   
@@ -43,7 +43,7 @@ async function http_request() {
     console.log(`The event payload: ${payload}`);
     
     //Build Body
-    var body = `{
+    const body = `{
       "project_metadata":{
          "name":${process.env.GITHUB_REPOSITORY},
          "github_actions_token":${id_token1},
