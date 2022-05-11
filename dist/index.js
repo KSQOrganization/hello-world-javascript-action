@@ -8655,14 +8655,6 @@ module.exports = require("net");
 
 /***/ }),
 
-/***/ 9630:
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("node:querystring");
-
-/***/ }),
-
 /***/ 2037:
 /***/ ((module) => {
 
@@ -8684,6 +8676,14 @@ module.exports = require("path");
 
 "use strict";
 module.exports = require("punycode");
+
+/***/ }),
+
+/***/ 3477:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("querystring");
 
 /***/ }),
 
@@ -8778,7 +8778,7 @@ var __webpack_exports__ = {};
 (() => {
 const core = __nccwpck_require__(5127);
 const github = __nccwpck_require__(3134);
-const querystring = __nccwpck_require__(9630);
+const querystring = __nccwpck_require__(3477);
 
 async function getIDTokenAction() {
   

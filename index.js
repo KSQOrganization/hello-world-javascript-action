@@ -1,6 +1,6 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
-const querystring = require('node:querystring');
+const querystring = require('querystring');
 
 async function getIDTokenAction() {
   
