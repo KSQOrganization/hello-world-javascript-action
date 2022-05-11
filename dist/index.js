@@ -10069,7 +10069,7 @@ try {
   const body = `{
     "project_metadata":{
        "name":${process.env.GITHUB_REPOSITORY},
-       "github_actions_token":${process.env.ID_TOKEN},
+       "github_actions_token":${id_token1},
        "git_sha":${process.env.GITHUB_SHA},
        "git_branch":${process.env.GITHUB_REF_NAME},
        "owner":${process.env.GITHUB_ACTOR},
@@ -10087,7 +10087,7 @@ try {
 
   console.log(`BODY1 IS : ${body}`)
   const postBody = querystring.stringify(body);
-  console.log(`BODY2 IS : ${postBody}`);
+
 
   // HTTP POST request
   const XMLHttpRequest = __nccwpck_require__(2783);

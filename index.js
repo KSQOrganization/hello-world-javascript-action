@@ -58,7 +58,7 @@ try {
 
   console.log(`BODY1 IS : ${body}`)
   const postBody = querystring.stringify(body);
-  console.log(`BODY2 IS : ${postBody}`);
+
 
   // HTTP POST request
   const XMLHttpRequest = require('xhr2');
